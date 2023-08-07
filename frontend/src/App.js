@@ -1,24 +1,22 @@
 import "./App.css";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-
-const products = [
-  {
-    id: 1,
-    name: "Product 1",
-    price: 19.99,
-    stock: 10,
-    image: "product1.jpg",
-  },
-  // ... other product data ...
-];
+import Footer from "./components/Footer";
+import { Route, Routes } from "react-router-dom";
+import AboutUs from "./pages/AboutUs";
+import PlaceOrder from "./pages/PlaceOrder";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Navbar />
-      <Home />
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/about" element={<AboutUs />}></Route>
+        <Route path="/order-items" element={<PlaceOrder />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
