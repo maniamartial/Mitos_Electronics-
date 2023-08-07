@@ -1,6 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 // Import your custom CSS
-// eslint-disable-next-line
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
@@ -8,9 +8,9 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
           Mitos
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -28,29 +28,29 @@ const Navbar = () => {
         >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <Link className="nav-link" to="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/products">
+              <Link className="nav-link" to="/products">
                 Products
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/about">
+              <Link className="nav-link" to="/about">
                 About Us
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/contact">
+              <Link className="nav-link" to="/contact">
                 Contact
-              </a>
+              </Link>
             </li>
             <li className="nav-item dropdown">
-              <a
+              <Link
                 className="nav-link dropdown-toggle"
-                href="#"
+                to="/"
                 id="accountDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -58,17 +58,17 @@ const Navbar = () => {
                 aria-expanded="false"
               >
                 Account
-              </a>
+              </Link>
               <div className="dropdown-menu" aria-labelledby="accountDropdown">
-                <a className="dropdown-item" href="/login">
+                <Link className="dropdown-item" to="/login">
                   Login
-                </a>
-                <a className="dropdown-item" href="/register">
+                </Link>
+                <Link className="dropdown-item" to="/register">
                   Register
-                </a>
-                <a className="dropdown-item" href="/profile">
+                </Link>
+                <Link className="dropdown-item" to="/profile">
                   Profile
-                </a>
+                </Link>
               </div>
             </li>
           </ul>

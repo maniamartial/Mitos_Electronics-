@@ -1,8 +1,10 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 import useProducts from "../hooks/useProducts";
-
+import { useNavigate } from "react-router-dom";
 const Home = () => {
+  const navigate = useNavigate();
+
   const products = useProducts();
   return (
     <div className="container ">
@@ -29,6 +31,12 @@ const Home = () => {
             </div>
           </div>
         ))}
+        {/* <button
+          onClick={() => navigate("order-items")}
+          className="btn bg-primary"
+        >
+          Place Order
+        </button> */}
       </div>
     </div>
   );
