@@ -1,28 +1,32 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
-import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
 import useCategories from "../hooks/useCategories";
 
 const Categories = () => {
   const categories = useCategories();
+
+  const handleCategoryChange = (event) => {
+    const categoryId = event.target.value;
+    if (categoryId) {
+      // Redirect to the ProductsByCategory page with the selected category ID
+      window.location.href = `/product-by-category/${categoryId}`;
+    }
+  };
+
   return (
-    <div className="container">
-      <div className="row mt-5">
-        {categories.map((category) => (
-          <div key={category.id} className="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">{category.name}</h5>
-                <Link
-                  to={`/category/${category.id}`}
-                  className="btn btn-primary"
-                >
-                  View Products
-                </Link>
-              </div>
-            </div>
-          </div>
-        ))}
+    <div className="container mt-3">
+      <div className="row">
+        <div className="">
+          <h5>Choose Category</h5>
+          <select className="form-select" onChange={handleCategoryChange}>
+            <option value="">Select a Category</option>
+            {categories.map((category) => (
+              <option key={category.id} value={category.id}>
+                {category.name}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
     </div>
   );

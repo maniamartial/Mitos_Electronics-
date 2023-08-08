@@ -1,15 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 // Import your custom CSS
+import "../assets/css/header.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
+// Import your logo image
+import logo from "../images/logo.png"; // Update the path to your logo image
+
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container">
+    <nav
+      className="navbar navbar-expand-lg navbar-dark"
+      style={{ background: "#50C878" }}
+    >
+      <div className="container" style={{ color: "black" }}>
+        {/* Replace the navbar-brand with the logo image */}
         <Link className="navbar-brand" to="/">
-          Mitos
+          <img
+            src={logo}
+            alt="Logo"
+            style={{ height: "auto", width: "100px" }}
+          />
         </Link>
         <button
           className="navbar-toggler"
@@ -28,7 +40,7 @@ const Navbar = () => {
         >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link black-link" to="/">
                 Home
               </Link>
             </li>
@@ -72,10 +84,6 @@ const Navbar = () => {
               </div>
             </li>
           </ul>
-        </div>
-        <div className="cart">
-          <i className="fas fa-shopping-cart"></i>
-          <span className="cart-count">0</span>
         </div>
       </div>
     </nav>
