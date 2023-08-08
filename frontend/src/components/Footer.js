@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-light py-4">
+    <footer className="text-dark py-4" style={{ background: "#50C878" }}>
       <div className="container">
         <div className="row">
           <div className="col-md-6">
