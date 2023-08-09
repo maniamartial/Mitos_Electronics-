@@ -1,15 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// const Filter = ({ onFilterChange }) => {
-//   const [selectedOption, setSelectedOption] = useState("none");
-
-//   const handleOptionChange = (event) => {
-//     const selectedValue = event.target.value;
-//     setSelectedOption(selectedValue);
-//     onFilterChange(selectedValue);
-//   };
-
 const Filter = ({ onFilterChange }) => {
   const [selectedOption, setSelectedoption] = useState("none");
 
@@ -37,5 +28,6 @@ const Filter = ({ onFilterChange }) => {
     </div>
   );
 };
+
 
 export default Filter;
