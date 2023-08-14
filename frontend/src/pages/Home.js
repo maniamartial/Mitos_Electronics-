@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import useProducts from "../hooks/useProducts";
-import { Link } from "react-router-dom"; // Import Link component
+import { Link } from "react-router-dom";
 import Categories from "../components/Categories";
 import Filter from "../components/Filter";
 
@@ -25,14 +25,17 @@ const Home = () => {
     }
   };
 
+  // Display only the first 24 products
+  const first24Products = filteredProducts.slice(0, 24);
+
   return (
-    <div className="container">
+    <div className="container" style={{ fontFamily: "Roboto Condensed" }}>
       <div className="d-flex justify-content-between align-items-center mb-3">
         <Categories />
         <Filter onFilterChange={handleFilterChange} />
       </div>
       <div className="row mt-5">
-        {filteredProducts.map((product, index) => (
+        {first24Products.map((product, index) => (
           <div key={index} className="col-lg-3 col-md-4 col-sm-6 mb-4">
             <Link
               to={`/single-product/${product.id}`}
