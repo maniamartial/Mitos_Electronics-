@@ -1,21 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
-// Import your custom CSS
+import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext"; // Import the useAuth hook
+
 import "../assets/css/header.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-
-// Import your logo image
-import logo from "../images/logo.png"; // Update the path to your logo image
+import logo from "../images/logo.png";
 
 const Navbar = () => {
+  const { user, logout } = useAuth(); // Use the user state and logout function
+
   return (
     <nav
       className="navbar navbar-expand-lg navbar-dark"
       style={{ background: "#50C878" }}
     >
-      <div className="container" style={{ color: "black" }}>
-        {/* Replace the navbar-brand with the logo image */}
+      <div
+        className="container"
+        style={{ color: "black", fontFamily: "Barlow", fontWeight: "Bold" }}
+      >
         <Link className="navbar-brand" to="/">
           <img
             src={logo}
@@ -44,11 +47,7 @@ const Navbar = () => {
                 Home
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/products">
-                Products
-              </Link>
-            </li>
+
             <li className="nav-item">
               <Link className="nav-link" to="/about">
                 About Us
@@ -72,15 +71,26 @@ const Navbar = () => {
                 Account
               </Link>
               <div className="dropdown-menu" aria-labelledby="accountDropdown">
-                <Link className="dropdown-item" to="/login">
-                  Login
-                </Link>
-                <Link className="dropdown-item" to="/register">
-                  Register
-                </Link>
-                <Link className="dropdown-item" to="/profile">
-                  Profile
-                </Link>
+                {user ? (
+                  <>
+                    <p className="dropdown-item">Welcome, {user.username}</p>
+                    <Link className="dropdown-item" to="/profile">
+                      Profile
+                    </Link>
+                    <button className="dropdown-item" onClick={logout}>
+                      Logout
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link className="dropdown-item" to="/login">
+                      Login
+                    </Link>
+                    <Link className="dropdown-item" to="/register">
+                      Register
+                    </Link>
+                  </>
+                )}
               </div>
             </li>
           </ul>

@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 #Application definition
 INSTALLED_APPS = [
     'rest_framework',
+     'rest_framework.authtoken',
     'products',
     'users',
   'corsheaders',
@@ -46,7 +47,13 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ],
+    # 'DEFAULT_PERMISSION_CLASSES': (
+    #     'rest_framework.permissions.IsAuthenticated',
+    # ),
 }
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

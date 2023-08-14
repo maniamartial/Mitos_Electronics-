@@ -3,14 +3,21 @@ import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 
 const Footer = () => {
   return (
-    <footer className="text-dark py-4" style={{ background: "#50C878" }}>
+    <footer
+      className="text-dark py-4"
+      style={{
+        background: "#50C878",
+        fontFamily: "Barlow",
+        fontWeight: "Bold",
+      }}
+    >
       <div className="container">
         <div className="row">
           <div className="col-md-6">
             <h5>Contact Us</h5>
-            <p>Email: info@example.com</p>
+            <p>Email: info@mitos.com</p>
             <p>Phone: (123) 456-7890</p>
-            <p>Address: 1234 Main St, City, Country</p>
+            <p>Address: 1234 Nairobi, Kenya</p>
           </div>
           <div className="col-md-6">
             <h5>Follow Us</h5>
