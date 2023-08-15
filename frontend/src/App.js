@@ -11,6 +11,12 @@ import Contact from "./pages/Contact";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import { AuthProvider } from "./context/AuthContext";
+import ViewCategories from "./pages/admin_pages/ViewCategories";
+import CreateCategory from "./pages/admin_pages/CreateCategory";
+import UpdateCategory from "./pages/admin_pages/UpdateCategory";
+import ProductList from "./pages/admin_pages/ProductList";
+import UpdateProduct from "./pages/admin_pages/UpdateProduct";
+import CreateProduct from "./pages/admin_pages/CreateProduct";
 
 function App() {
   return (
@@ -32,6 +38,14 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />}></Route>
+
+          {/* Admin pages */}
+          <Route path="/view_categories" element={<ViewCategories />} />
+          <Route path="/create-category" element={<CreateCategory />} />
+          <Route path="/update-category/:id" element={<UpdateCategory />} />
+          <Route path="/view_products" element={<ProductList />} />
+          <Route path="/update-product/:id" element={<UpdateProduct />} />
+          <Route path="/create-product" element={<CreateProduct />} />
         </Routes>
         <Footer />
       </AuthProvider>

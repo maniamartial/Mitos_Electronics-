@@ -1,5 +1,6 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+// Import Font Awesome CSS
 
 const Footer = () => {
   return (
@@ -23,13 +24,28 @@ const Footer = () => {
             <h5>Follow Us</h5>
             <ul className="list-inline">
               <li className="list-inline-item">
-                <a href="#">Facebook</a>
+                <a href="#">
+                  <i
+                    className="fab fa-facebook"
+                    style={{ color: "yellow" }}
+                  ></i>{" "}
+                  {/* Replace with Font Awesome icon */}
+                </a>
               </li>
               <li className="list-inline-item">
-                <a href="#">Twitter</a>
+                <a href="#">
+                  <i className="fab fa-twitter" style={{ color: "yellow" }}></i>{" "}
+                  {/* Replace with Font Awesome icon */}
+                </a>
               </li>
               <li className="list-inline-item">
-                <a href="#">Instagram</a>
+                <a href="#">
+                  <i
+                    className="fab fa-instagram"
+                    style={{ color: "yellow" }}
+                  ></i>{" "}
+                  {/* Replace with Font Awesome icon */}
+                </a>
               </li>
             </ul>
           </div>
@@ -39,6 +55,9 @@ const Footer = () => {
         <p>
           &copy; {new Date().getFullYear()} Your Ecommerce Store. All rights
           reserved.
+        </p>
+        <p>
+          Created by <a href="https://techmaniacc.netlify.app/">Techmaniacc</a>
         </p>
       </div>
     </footer>
