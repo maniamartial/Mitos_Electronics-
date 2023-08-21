@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 // Import Font Awesome CSS
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -53,8 +54,8 @@ const Footer = () => {
       </div>
       <div className="text-center mt-3">
         <p>
-          &copy; {new Date().getFullYear()} Your Ecommerce Store. All rights
-          reserved.
+          <Link to="/login">&copy; {new Date().getFullYear()} </Link> Your
+          Ecommerce Store. All rights reserved.
         </p>
         <p>
           Created by <a href="https://techmaniacc.netlify.app/">Techmaniacc</a>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const CreateCategory = () => {
   const [categoryName, setCategoryName] = useState("");
@@ -25,7 +26,12 @@ const CreateCategory = () => {
 
   return (
     <div className="container mt-4 text-center">
-      <h2>Create Category</h2>
+      <h2>
+        <Link to="/admin" className="text-dark mr-5">
+          <i className="text-warning fas fa-arrow-left mr-5"></i>
+        </Link>
+        Create Category
+      </h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group mb-3">
           <label>Name:</label>
