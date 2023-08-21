@@ -17,6 +17,7 @@ import UpdateCategory from "./pages/admin_pages/UpdateCategory";
 import ProductList from "./pages/admin_pages/ProductList";
 import UpdateProduct from "./pages/admin_pages/UpdateProduct";
 import CreateProduct from "./pages/admin_pages/CreateProduct";
+import AdminDashboard from "./pages/admin_pages/AdminHomePage";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
 
           {/* Admin pages */}
+          <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/view_categories" element={<ViewCategories />} />
           <Route path="/create-category" element={<CreateCategory />} />
           <Route path="/update-category/:id" element={<UpdateCategory />} />

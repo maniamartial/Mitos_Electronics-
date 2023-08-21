@@ -39,45 +39,45 @@ const Register = () => {
   };
 
   return (
-    <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-md-6">
-          <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <input
-                type="text"
-                name="username"
-                value={formData.username}
-                onChange={handleChange}
-                className="form-control"
-                placeholder="Username"
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                type="password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                className="form-control"
-                placeholder="Password"
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="form-control"
-                placeholder="Email"
-              />
-            </div>
-            <button type="submit" className="btn btn-primary">
+    <div className="container d-flex justify-content-center align-items-center min-vh-100">
+      <div className="col-md-6">
+        <form onSubmit={handleSubmit} style={{ minHeight: "400px" }}>
+          <div className="mb-3">
+            <input
+              type="text"
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
+              className="form-control"
+              placeholder="Username"
+            />
+          </div>
+          <div className="mb-3">
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              className="form-control"
+              placeholder="Password"
+            />
+          </div>
+          <div className="mb-3">
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="form-control"
+              placeholder="Email"
+            />
+          </div>
+          <div className="d-grid">
+            <button type="submit" className="btn btn-success">
               Register
             </button>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   );

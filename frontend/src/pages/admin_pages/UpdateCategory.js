@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const UpdateCategory = () => {
   const { id } = useParams();
@@ -36,7 +37,12 @@ const UpdateCategory = () => {
 
   return (
     <div className="container mt-4 text-center">
-      <h2>Update Category</h2>
+      <h2>
+        <Link to="/admin" className="text-dark mr-5">
+          <i className="text-warning fas fa-arrow-left mr-5"></i>
+        </Link>
+        {" "}Update Category
+      </h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Name:</label>

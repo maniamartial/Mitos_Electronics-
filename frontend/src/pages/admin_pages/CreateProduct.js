@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const CreateProduct = () => {
   const [productData, setProductData] = useState({
@@ -55,7 +56,12 @@ const CreateProduct = () => {
 
   return (
     <div className="container mt-4 text-center">
-      <h2>Create Product</h2>
+      <h2>
+        <Link to="/admin" className="text-dark mr-5">
+          <i className="text-warning fas fa-arrow-left mr-5"></i>
+        </Link>{" "}
+        Create Product
+      </h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Name:</label>
