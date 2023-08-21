@@ -12,6 +12,20 @@ const ProductList = () => {
     });
   }, []);
 
+  // Function to delete a product
+  const handleDelete = (productId) => {
+    axios
+      .delete(`http://127.0.0.1:8000/api/electronics/${productId}`)
+      .then((response) => {
+        console.log("Product deleted:", response.data);
+        // Remove the deleted product from the list
+        setProducts(products.filter((product) => product.id !== productId));
+      })
+      .catch((error) => {
+        console.error("Error deleting product:", error);
+      });
+  };
+
   return (
     <div className="container mt-4 text-center">
       <h2>Products</h2>
@@ -39,7 +53,7 @@ const ProductList = () => {
                 </Link>{" "}
                 <button
                   className="btn btn-danger btn-sm"
-                  // Implement delete functionality
+                  onClick={() => handleDelete(product.id)}
                 >
                   Delete
                 </button>
